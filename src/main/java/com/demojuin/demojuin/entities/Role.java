@@ -15,6 +15,7 @@ public class Role {
     private int idrole;
     private RoleName RoleName;
     @JsonIgnore
- @ManyToMany(mappedBy = "role")
-    private Set<UserEntity> users=new HashSet<>();
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private UserEntity user;
 }
